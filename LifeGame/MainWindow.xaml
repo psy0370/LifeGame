@@ -1,0 +1,21 @@
+﻿<Window x:Class="LifeGame.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LifeGame"
+        mc:Ignorable="d"
+        Title="Life Game" ResizeMode="NoResize" SizeToContent="WidthAndHeight" Loaded="Window_Loaded">
+    <DockPanel>
+        <StackPanel Orientation="Horizontal" DockPanel.Dock="Bottom">
+            <Label Content="マス 横：" />
+            <TextBox x:Name="HorizonCells" Width="50" VerticalContentAlignment="Center" Text="100" />
+            <Label Content="縦：" />
+            <TextBox x:Name="VerticalCells" Width="50" VerticalContentAlignment="Center" Text="100" />
+            <Button x:Name="EditButton" Margin="5,0,0,0" Click="Button_Click"></Button>
+        </StackPanel>
+        <Border BorderThickness="1" BorderBrush="Gray" Background="LightGray" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Canvas x:Name="CellView" Margin="1" MouseWheel="CellView_MouseWheel" />
+        </Border>
+    </DockPanel>
+</Window>
