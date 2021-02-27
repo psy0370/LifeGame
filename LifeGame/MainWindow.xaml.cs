@@ -14,7 +14,7 @@ namespace LifeGame
     /// </summary>
     public partial class MainWindow : Window
     {
-        private const int CellPixels = 6;
+        private const int CellPixels = 10;
 
         private Task loopThread;
         private CancellationTokenSource tokenSource;
@@ -54,6 +54,22 @@ namespace LifeGame
             else
             {
                 tokenSource.Cancel();
+            }
+        }
+
+        /// <summary>
+        /// クリアボタンをクリックしたときの処理を定義します。
+        /// </summary>
+        private void ClearButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (loopThread?.IsCompleted == true)
+            {
+                for (var i = 0; i < cells.Conditions.Length; i++)
+                {
+                    cells.Conditions[i] = false;
+                    var rectangle = (Rectangle)CellView.Children[i];
+                    rectangle.Fill = Brushes.White;
+                }
             }
         }
 

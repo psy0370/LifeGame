@@ -6,16 +6,19 @@
         xmlns:local="clr-namespace:LifeGame"
         mc:Ignorable="d"
         Title="Life Game" ResizeMode="NoResize" SizeToContent="WidthAndHeight" Loaded="Window_Loaded">
+    
     <DockPanel>
         <StackPanel Orientation="Horizontal" DockPanel.Dock="Bottom">
-            <Label Content="マス 横：" />
-            <TextBox x:Name="HorizonCells" Width="50" VerticalContentAlignment="Center" Text="100" />
-            <Label Content="縦：" />
-            <TextBox x:Name="VerticalCells" Width="50" VerticalContentAlignment="Center" Text="100" />
-            <Button x:Name="EditButton" Margin="5,0,0,0" Click="Button_Click"></Button>
+            <Label Content="マス 横："/>
+            <TextBox x:Name="HorizonCells" Width="50" VerticalContentAlignment="Center" Text="100"/>
+            <Label Content="縦："/>
+            <TextBox x:Name="VerticalCells" Width="50" VerticalContentAlignment="Center" Text="100"/>
+            <Button x:Name="EditButton" Margin="5,0,0,0" Click="Button_Click"/>
+            <Button x:Name="ClearButton" Content="クリア" Margin="5,0,0,0" Click="ClearButton_Click"/>
         </StackPanel>
+        
         <Border BorderThickness="1" BorderBrush="Gray" Background="LightGray" HorizontalAlignment="Center" VerticalAlignment="Center">
-            <Canvas x:Name="CellView" Margin="1" MouseWheel="CellView_MouseWheel" />
+            <Canvas x:Name="CellView" Margin="1" MouseWheel="CellView_MouseWheel"/>
         </Border>
     </DockPanel>
 </Window>
